@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="UI9999_KHTEST">
+    <wb-module deploy-name="UI999_UI_TEST02">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="UI9999_KHTEST"/>
-        <property name="java-output-path" value="/UI9999_KHTEST/build/classes"/>
+        <property name="java-output-path" value="/UI999_UI_TEST02/build/classes"/>
+        <property name="context-root" value="UI999_UI_TEST02"/>
     </wb-module>
 </project-modules>
