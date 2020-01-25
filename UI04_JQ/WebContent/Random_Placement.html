@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>༼ ༎ຶ ෴ ༎ຶ༽ </title>
+<style type="text/css">
+header {
+	text-align: center;
+}
+
+section {
+	text-align: center;
+}
+
+footer{
+	text-align: center;
+	padding: 50px;
+}
+
+table {
+	margin-top: 100px;
+	margin-right: auto;
+	margin-left: auto;
+	font: 30px "Arial Black";
+}
+
+tbody *, thead *{
+	border: 2px solid gray;
+	margin: 10px;
+}
+
+button{
+	width: auto;
+	height: auto;
+	font: 30pt "Arial Black";
+	color: red;
+	background-color: gray;
+}
+</style>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	
+	var s_name = new Array('선생님','강유진','권다솜','김동영','김윤희','김재경','김정선','문재필','박선우','박찬윤','백승아','백종호','서채원','안재기','윤영우','이민경','이성우','이채안','임성훈','전영태','정은주','정지나','조현준','최보람','최원빈','최찬현','한제협');
+
+	$(function() {
+		$("#random_start").click(function() {
+			
+			//table data 초기화
+			var count = 1;
+			$(".seat").each(function(){					
+				$(this).css("background-color","white").css("color","black");
+				$(this).text(count++);
+				$(this).removeClass("selected");
+			})
+			
+			//랜덤 숫자 1~30 추출 (26개)
+			var students = new Array();
+			for (var i = 0; i < 26; i++) {
+				students[i] = Math.floor(Math.random() * 30 + 1);
+				for (var j = 0; j < i; j++) {
+					if (students[j] == students[i]) {
+						i--;
+						break;
+					}
+				}
+			}
+			//임시 출력 : 1번학생 자리, 2번학생 자리, 3번학생 자리, 4번학생 자리, ... 순서로 난수값이 들어갑니다.
+			//alert(students);
+			
+			//table에 랜덤 정보 대입
+			for (var i = 0; i < students.length; i++) {
+				$(".seat").each(function(){
+					
+ 					if($(this).text() == students[i] && !$(this).hasClass("selected")){
+						$(this).css("background-color","black").css("color","white");
+						$(this).text((i+1) + " " + s_name[i+1]);
+						$(this).addClass("selected");
+					}
+				})
+			}
+			$(".seat").each(function(){
+				if(!$(this).hasClass("selected")){
+					$(this).text("짐칸");
+				}
+			})
+
+		})
+		
+		$("#nextDeveloper").click(function(){
+			var nextDeveloper;
+			do{
+				nextDeveloper = Math.floor(Math.random()*26+1);
+			}while(nextDeveloper == 22);
+			alert(nextDeveloper + "번 학생 축하합니다 ^,^!!");
+		})
+
+	})
+</script>
+
+
+</head>
+<body>
+	<header>
+		<h1>랜덤 자리 배정 ༼ ༎ຶ ෴ ༎ຶ༽ </h1>
+	</header>
+
+	<section>
+		<article>
+			<button id="random_start">클릭!</button>
+			<table>
+				<caption></caption>
+				<colgroup>
+					<col width="180px" />
+					<col width="180px" />
+					<col width="180px" />
+					<col width="100px" />
+					<col width="180px" />
+					<col width="180px" />
+					<col width="180px" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th colspan="6">교탁</th>
+						<th>선생님</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="seat">1</td>
+						<td class="seat">2</td>
+						<td class="seat">3</td>
+						<td rowspan="5">복도</td>
+						<td class="seat">4</td>
+						<td class="seat">5</td>
+						<td class="seat">6</td>
+					</tr>
+					<tr>
+						<td class="seat">7</td>
+						<td class="seat">8</td>
+						<td class="seat">9</td>
+						<td class="seat">10</td>
+						<td class="seat">11</td>
+						<td class="seat">12</td>
+					</tr>
+					<tr>
+						<td class="seat">13</td>
+						<td class="seat">14</td>
+						<td class="seat">15</td>
+						<td class="seat">16</td>
+						<td class="seat">17</td>
+						<td class="seat">18</td>
+					</tr>
+					<tr>
+						<td class="seat">19</td>
+						<td class="seat">20</td>
+						<td class="seat">21</td>
+						<td class="seat">22</td>
+						<td class="seat">23</td>
+						<td class="seat">24</td>
+					</tr>
+					<tr>
+						<td class="seat">25</td>
+						<td class="seat">26</td>
+						<td class="seat">27</td>
+						<td class="seat">28</td>
+						<td class="seat">29</td>
+						<td class="seat">30</td>
+					</tr>
+				</tbody>
+			</table>
+		</article>
+	</section>
+
+	<footer>
+		<button id="nextDeveloper">다음 랜덤프로그램 만들 사람</button>
+	</footer>
+</body>
+</html>

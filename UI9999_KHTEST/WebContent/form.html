@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+form {
+	border-radius: 10px;
+	background-color: #0d0;
+}
+fieldset{
+	border: none;
+}
+legend{
+	font-size: 20px;
+	font-weight: bold;
+}
+li {
+	list-style: none;
+	padding: 10px;
+	margin: 2px;
+	border: 2px solid white;
+	border-radius: 10px;
+	background-color: #0f0;
+	height: 30px;
+}
+#input{
+	position: absolute;
+	left: 300px;
+	width: 400px;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+#submit{
+	border-radius: 15px;
+	width: 100px;
+	height: 40px;
+	background-color: black;
+	color: white;
+	font-size: 20px;
+}
+</style>
+</head>
+<body>
+	<form action="#">
+		<fieldset>
+			<legend>Step 1: 로그인정보</legend>
+			
+			<ol>
+				<li>아이디 <input type="text" name="id" id="input"></li>
+				<li>비밀번호 <input type="text" name="pw" id="input"></li>
+				<li>비밀번호 확인 <input type="text" name="pwChk" id="input"></li>
+				<li>회원 등급 <input type="text" name="grade" value="준회원" id="input"></li>
+			</ol>
+		</fieldset>
+		<fieldset>
+			<legend>Step 2: 개인 정보</legend>
+			<ol>
+				<li>이름 <input type="text" name="name" placeholder="5자미만 공백없이" id="input"></li>
+				<li>메일 주소 <input type="text" name="email" placeholder="abcd@domain.com" id="input"></li>
+				<li>연락처 <input type="text" name="phone" id="input"></li>
+			</ol>
+		</fieldset>
+		<fieldset>
+			<legend>Step 3: 코딩 숙련도(상,중,하)</legend>
+			<ol>
+				<li><input type="range" min="1" max="3" step="1" value="2" id="input"></li>
+			</ol>
+		</fieldset>
+		<fieldset>
+			<input type="submit" value="제출" id="submit">
+		</fieldset>
+	</form>
+</body>
+</html>

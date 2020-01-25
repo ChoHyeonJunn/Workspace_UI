@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	li{
+		margin: 10px;
+	}
+</style>
+</head>
+<body>
+	<form action="/testw/product" method="post">
+		<fieldset>
+			<legend>납품자정보</legend>
+			<ol>
+				<li><label for="name">납품자명: </label> <input id="name" type="text" name="name" required="required" placeholder="name" autocomplete="name"></li>
+				<li><label for="email">email: </label> <input id="email" type="text" name="email" required="required" placeholder="answs@naver.com" autocomplete="email"></li>
+				<li><label for="homepage">홈페이지: </label> <input id="homepage" type="text" name="homepage" required="required" placeholder="http://" autocomplete="homepage"></li>
+			</ol>
+		</fieldset>
+		
+		<fieldset>
+			<legend>납품정보</legend>
+			<ul>
+				<li><label for="parcelname">상품명: </label> <input id="parcelname" type="text" name="parcelname" required="required" autocomplete="parcelname"></li>
+				<li>
+					<label for="parcelcount">납품수량: </label> 
+					<input id="parcelcount" type="text" list="list" name="parcelcount" required="required" placeholder="최소10" autocomplete="name">
+					<datalist id="list">
+						<option>10</option>
+						<option>20</option>
+						<option>30</option>
+						<option>40</option>
+						<option>50</option>
+					</datalist>
+				</li>
+				<li><label for="parcelgrade">납품등급: </label> <input  id="parcelgrade" type="range" name="parcelgrade" min="1" max="10" step="1" value="6"></li>
+				<li><label for="etc">기타사항: </label><textarea id="etc" name="etc" rows="5" cols="30"></textarea></li>
+			</ul>
+		</fieldset>
+		<input type="submit" value="send message">
+	</form>
+</body>
+</html>

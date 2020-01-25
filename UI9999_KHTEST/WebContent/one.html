@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body {
+	margin: 20px;
+	padding: 10px;
+	border: 1px solid black;
+}
+
+.sub_list {
+	display: none;
+	transition: all 0.5s;
+}
+
+#navi li:hover .sub_list {
+	display: block;
+}
+
+.sub_list:hover {
+	background-color: black;
+	color: red;
+}
+</style>
+<style type="text/css" style="resources/css/main.css"></style>
+</head>
+<body>
+
+	<h2>서브 메뉴가 펼쳐지는 네비게이션 만들기</h2>
+	<hr>
+	<ul id="navi">
+		<li><a href="#">Home</a></li>
+		<li><a href="#">웹개발</a>
+			<ul class="sub_menu">
+				<li class="sub_list"><a href="#">웹디자인</a></li>
+				<li class="sub_list"><a href="#">HTML5 + CSS3</a></li>
+				<li class="sub_list"><a href="#">JQuery</a></li>
+				<li class="sub_list"><a href="#">웹 + 모바일</a></li>
+			</ul></li>
+		<li><a href="#">게시판</a>
+			<ul class="sub_menu">
+				<li class="sub_list"><a href="#">Q & A</a></li>
+				<li class="sub_list"><a href="#">방명록</a></li>
+			</ul></li>
+		<li><a href="views/test/productForm.html">상품주문서</a></li>
+	</ul>
+
+
+
+
+
+	<header class="html5">
+		<h1>HTML5 & CSS3</h1>
+
+		<nav>
+			<ul>
+				<li>HTML5</li>
+				<li>CSS3</li>
+				<li>JAVASCRIPT</li>
+				<li>JQUERY</li>
+				<li>HTML5 API</li>
+			</ul>
+		</nav>
+	</header>
+	<hr>
+	<section class="html5">
+		<article>
+			이 영역은 소제목과 내용으로 구성되는 영역입니다. <img alt="flower1.jpg"
+				src="resources/images/flower1.jpg"> section 안에 article 안에 img
+			태그를 사용하였습니다.
+		</article>
+	</section>
+	<hr>
+	<footer class="html5">
+		이 문서는 HTML5를 기준으로 작성되었습니다.<br> 이 영역은 FOOTER 영역입니다.
+	</footer>
+
+</body>
+</html>

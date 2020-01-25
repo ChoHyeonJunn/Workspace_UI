@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function searchPar() {
+		var child02 = document.getElementsByTagName("p")[1];
+		var parent = child02.parentNode;
+		alert(parent.nodeName);
+		parent.style.backgroundColor = "pink";
+	}
+
+	function searchChi() {
+		var div = document.getElementsByTagName("div");
+		var divChildren = div[0].childNodes;
+		alert(divChildren[5].tagName);
+		divChildren[5].style.backgroundColor = "skyblue";
+	}
+	
+	function pNode(){
+		var test01 = document.getElementsByTagName("p")[3];
+		var parent = test01.parentNode;
+		
+		parent.style.backgroundColor = "purple";
+	}
+	
+	function cNode(){
+		var div = document.getElementsByTagName("div");
+		var divChildren = div[2].childNodes;
+		alert(divChildren[3].tagName);
+		divChildren[3].style.fontSize = "40pt";
+	}
+</script>
+</head>
+<body>
+
+	<div>
+		<p>child01</p>
+		<p>child02</p>
+		<p>child03</p>
+	</div>
+
+	<button onclick="searchPar();">부모탐색</button>
+	<br>
+	<button onclick="searchChi();">자식탐색</button>
+
+	<!-- 문제!! -->
+	<div>
+		<p>test01</p>
+		<p>test02</p>
+	</div>
+	<div>
+		<p>test03</p>
+		<p>test04</p>
+	</div>
+
+	<h3 onclick="pNode();">1. "test01 태그를 포함한 부모태그" 의 배경색을 적용하자</h3>
+	<h3 onclick="cNode();">2. "마지막 div 태그" 에 포함된 마지막 p 태그의 폰트 크기를 20pt 적용하자.</h3>
+
+</body>
+</html>

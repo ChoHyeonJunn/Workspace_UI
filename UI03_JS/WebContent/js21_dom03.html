@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+img, #imgview {
+	width: 300px;
+	height: 300px;
+}
+</style>
+
+<script type="text/javascript">
+	function createImg() {
+		// 1. 이름이 rdo인 요소들을 가지고 오자.
+		var rdo = document.getElementsByName("rdo");
+		var imgURL = "";
+		// 2. 가져온 요소들을 반복하여 조회하면서 라디오버튼이 체크되어 있는지 확인하고 체크되어 있다면 해당 요소의 value로 이미지 경로를 지정
+		for (var i = 0; i < rdo.length; i++) {
+			if(rdo[i].checked){
+				imgURL = rdo[i].value;
+				break;
+			}
+		}
+		// 3. img태그를 생성하고, src 속성을 생성하여 2번에서 만든 경로를 src속성의 value로 넣어준다.
+		var img = document.createElement("img");
+		img.setAttribute("src", imgURL)
+		
+		// 4. 바꿔준다. replaceChild(new, old);
+		var div = document.getElementById("imgview");
+		var oldImg = document.getElementsByTagName("img")[0];
+		div.replaceChild(img, oldImg);
+		
+	}
+
+	function deleteImg() {
+		var rdo = document.getElementsByName("rdo");
+		for (var i = 0; i < rdo.length; i++) {
+			if(rdo[i].checked){
+				rdo[i].checked = false;
+			}
+		}
+		
+		var img = document.createElement("img");
+		img.setAttribute("src", "");
+		
+		var div = document.getElementById("imgview");
+		var oldImg = document.getElementsByTagName("img")[0];
+		div.replaceChild(img, oldImg);
+	}
+</script>
+
+
+</head>
+<body>
+
+	<input type="radio" name="rdo" value="image/img01.png">img01
+	<br>
+	<input type="radio" name="rdo" value="image/img02.png">img02
+	<br>
+	<input type="radio" name="rdo" value="image/img03.png">img03
+	<br>
+
+	<button onclick="createImg();">이미지 생성</button>
+	<button onclick="deleteImg();">이미지 삭제</button>
+
+	<div id="imgview">
+		<img alt="이미지 생성 대기중...." src="">
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>팝업창</title>
+
+<script type="text/javascript">
+	function test(){
+		//name이 test인 요소 (text) 의 값을 받아서 val 에 저장
+		var val=document.getElementsByName("test")[0].value;
+		//이 팝업창을 만든 window 페이지에 2번째 h1 태그를 찾아 문서 내용을 val 로 바꾼다.
+		opener.document.getElementsByTagName("h1")[1].innerHTML=val;
+		close();
+	}
+</script>
+
+</head>
+<body>
+
+	<input type="text" name="test"/>
+	<input type="button" onclick="test()" value="전달"/>
+	<input type="button" onclick="self.close()" value="창닫기">
+	<!-- self 는 현재 윈도우를 반환한다. close()메서드는 현재 윈도우를 닫는다. -->
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+.menu {
+	width: 150px;
+	list-style: none;
+	border: 1px solid black;
+	border-radius: 10px;
+	position: absolute;
+}
+
+#menu2 {
+	left: 160px;
+}
+
+.sub_menu li {
+	display: none;
+	height: 0px;
+	list-style: none;
+	border: 1px solid black;
+}
+
+li {
+	transition: background 0.5s, height 0.5s linear;
+}
+
+.menu:hover li {
+	background-color: red;
+	height: 30px;
+	display: block;
+}
+</style>
+</head>
+<body>
+
+	<ul class="menu" id="menu1">
+		<li><b>메뉴1</b>
+			<ul class="sub_menu">
+				<li>123</li>
+				<li>123</li>
+				<li>123</li>
+			</ul></li>
+	</ul>
+	<ul class="menu" id="menu2">
+		<li><b>메뉴1</b>
+			<ul class="sub_menu">
+				<li>123</li>
+				<li>123</li>
+				<li>123</li>
+			</ul>
+
+		</li>
+	</ul>
+
+</body>
+</html>

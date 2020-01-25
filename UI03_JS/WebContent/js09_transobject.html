@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>1. 숫자형 형 변환 number() 함수</h1>
+	<p>문자형의 숫자를 숫자형으로 변환시켜 준다.</p>
+	<input type="text" id="num"/>
+	<button onclick="numTest(num.value);">확인</button>
+	
+	<!-- body 안에 script를 넣어보았어요~~!! -->
+	<script type="text/javascript">
+		function numTest(val){
+			var vals = Number(val) + 5;
+			alert(vals + " : " + typeof(vals));
+		}	
+	</script>
+	
+	<!--  -->
+	
+	<h2>2. 정수형 형 변환 parseInt() 함수</h2>
+	<p>문자형의 숫자를 정수형으로 반환</p>
+	<input type="text" id="int"/>
+	<button onclick="intTest(int.value);">확인</button>
+	
+	<script type="text/javascript">
+		function intTest(val){
+			var vals = parseInt(val) + 5;
+			alert(vals + " : " + typeof(vals));
+		}
+	</script>
+
+	<h2>3. 실수형 형 변환 parseFloat() 함수</h2>
+	<p>문자형의 숫자를 실수형으로 반환</p>
+	<input type="text" id="float" />
+	<button onclick="floatTest(float.value);">확인</button>
+	
+	<script type="text/javascript">
+		function floatTest(val){
+			var vals = parseFloat(val) + 5;
+			alert(vals + " : " + typeof(vals));
+		}
+	</script>
+
+	<h2>4. 검증함수</h2>
+	<p>문자열로 된 코드를 자바스크립트로 읽어들여 계산한다.</p>
+	<input type="text" name="evalue" placeholder="예) 5 + 10"/>
+	<button onclick="evalTest();">계산</button>
+	<span></span>
+
+	<script type="text/javascript">
+		function evalTest(){
+			var val = document.getElementsByName("evalue")[0];
+			if(confirm("작성하신 코드가 맞나요? : " + val.value)){
+				document.getElementsByTagName("span")[0].innerHTML = 
+					"<b> 계산결과 : " + eval(val.value) + "</b>";
+			} else{
+				val.placeholer = "다시 작성합니다. 예) 5 + 10"
+			}
+		}
+	</script>
+
+	<hr>
+	
+	<h1>숙제01 : using id</h1>
+
+	<input id = "a"type="number">
+	<input id = "b" type="text" list="mylist">
+	<datalist id="mylist">
+		<option value="+"/>
+		<option value="-"/>
+		<option value="*"/>
+		<option value="/"/>
+	</datalist>	
+	<input id = "c" type="number">
+	<button onclick="calc();">계산</button>
+	<span id="s"></span>
+
+	<script type="text/javascript">
+		function calc(){
+			var number01 = document.getElementById("a");
+			var cal = document.getElementById("b");
+			var number02 = document.getElementById("c");
+
+ 			var res = number01.value + cal.value + number02.value;
+ 			
+			document.getElementById("s").innerHTML = 
+				"<b> 계산결과 : " + res + " = " + eval(res) + "</b>"; 
+
+		}
+	</script>
+
+
+
+	<h1>숙제02 : using name</h1>
+
+	<input name="test" type="number">
+	<input name="test" type="text" list="mylist">
+	<datalist id="mylist">
+		<option value="+" />
+		<option value="-" />
+		<option value="*" />
+		<option value="/" />
+	</datalist>
+	<input name="test" type="number">
+	<button onclick="calc();">계산</button>
+	<span id="ss"></span>
+
+	<script type="text/javascript">
+		function calc(){
+			var opr = document.getElementsByName("test");
+ 			var res = opr[0].value + opr[1].value + opr[2].value;
+ 			
+			document.getElementById("ss").innerHTML = 
+				"<b> 계산결과 : " + res + " = " + eval(res) + "</b>"; 
+
+		}
+	</script>
+</body>
+</html>

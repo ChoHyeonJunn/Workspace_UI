@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>중복체크</title>
+
+<script type="text/javascript">
+	//이미 있는 아이디들로 정해놓은 배열~
+	var ids = [ "khacademy", "java", "script" ];
+
+	function confirmChk() {
+		var id = document.getElementsByName("id")[0].value;
+		var div = document.getElementsByTagName("div")[0];
+		
+		//배열에 id 로 받은 인덱스가 있는지 체크 -1이면 존재하지 않는 것!
+		if (ids.indexOf(id) != -1) {
+			div.innerHTML = "<b>아이디가 존재합니다.</b>";
+		} else {
+			//사용 가능할 시 확인버튼 생성 -> onclick 이벤트는 insertId(id)
+			var userId = "사용할 수 있는 아이디입니다." + "<input type='button' value='확인'"
+					+ "onclick='insertId(\"" + id + "\")'>";
+			div.innerHTML = userId;
+		}
+	}
+
+	function insertId(id) {
+		//팝업창을 오픈한 윈도우의 name이 id 인 태그들 중 0번째 태그를 찾아 값을 id로 표시
+		opener.document.getElementsByName("id")[0].value = id;
+		//팝업창을 오픈한 윈도우의 name이 pwd 인 태그들 중 0번째 태그를 찾아 focus를 지정해준다.
+		opener.document.getElementsByName("pwd")[0].focus();
+		//현재 팝업 window를 닫는다.
+		close();
+	}
+</script>
+
+</head>
+<body>
+
+	<table>
+		<tr>
+			<td>아이디</td>
+			<td><input type="text" name="id"/></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="button" value="중복확인" onclick="confirmChk()"/>
+				<input type="button" value="취소" onclick="self.close()"/>
+			</td>
+		</tr>
+	</table>
+	<div></div>
+
+</body>
+</html>

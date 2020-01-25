@@ -2,30 +2,256 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body  style="background-color:gray;">
+<title>༼ ༎ຶ ෴ ༎ຶ༽      (゜ロ゜;;(゜ロ゜;;;;</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+    var elm = ".main_image";
+    $(elm).each(function (index) {
+        // 개별적으로 Wheel 이벤트 적용
+        $(this).on("mousewheel DOMMouseScroll", function (e) {
+            e.preventDefault();
+            var delta = 0;
+            if (!event) event = window.event;
+            if (event.wheelDelta) {
+                delta = event.wheelDelta / 120;
+                if (window.opera) delta = -delta;
+            } 
+            else if (event.detail)
+                delta = -event.detail / 3;
+            var moveTop = $(window).scrollTop();
+            var elmSelecter = $(elm).eq(index);
+            // 마우스휠을 위에서 아래로
+            if (delta < 0) {
+                if ($(elmSelecter).next() != undefined) {
+                    try{
+                        moveTop = $(elmSelecter).next().offset().top;
+                    }catch(e){}
+                }
+            // 마우스휠을 아래에서 위로
+            } else {
+                if ($(elmSelecter).prev() != undefined) {
+                    try{
+                        moveTop = $(elmSelecter).prev().offset().top;
+                    }catch(e){}
+                }
+            }
+             
+            // 화면 이동 0.8초(800)
+            $("html,body").stop().animate({
+                scrollTop: moveTop + 'px'
+            }, {
+                duration: 800, complete: function () {
+                }
+            });
+        });
+    });
+}
 
-	<div class="header" style="background-color:purple;">
-		
-		<div class="topbar">
-			<ul>
-				<li>회원가입</li>
-				<li>로그인</li>
-			</ul>
-		</div>
-		
-		<div class="navbar">
+
+</script>
+<style type="text/css">
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+a {
+	text-decoration: none;
+	color : black;
+}
+a:hover{
+	font-size: 1.03em;
+	color : gray;
+}
+.main_image {
+	height: 100vh;
+	background-size: cover;
+}
+
+#videobcg {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -1000;
+	overflow: hidden;
+}
+
+#sidebar {
+	position: fixed;
+	width: 240px;
+	left: 0;
+	top: 0px;
+	height: 100%;
+	z-index: 98;
+	position: fixed;
+}
+
+#sidebar-wrap {
+	padding: 0 40px;
+}
+
+#top-logo {
+	margin-top: 50px;
+	display: table;
+}
+
+#memberlist {
+	margin-top: 50px;
+}
+
+#menu-v {
+	margin-top: 30px;
+}
+
+#main_text_button {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%);
+	opacity: 1;
+	z-index: 999;
+}
+.inner1{
+	padding: 55px;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+.f-g-0, .f-g-1, .f-g-2{
+	margin: 20px;
+	float: left;
+}
+
+</style>
+
+</head>
+<body>
+
+	<!-- 사이드바 버튼 -->
+	<div id="sidebar">
+
+		<div id="sidebar-wrap">
+
+			<div id="top-logo">
+				<a href="index.html"> <img alt="top-logo"
+					src="https://tonywack.com/artfinger/img/toplogo.png">
+				</a>
+			</div>
+
 			
+			<!-- list 1 -->
+			<div id="memberlist">
+				<dl>
+					<dd>
+						<span><a href="#">SIGN IN</a></span> 
+						<span>/</span> 
+						<span><a href="#">CART</a></span>
+					</dd>
+					<dd>
+						<span><a href="#">MYPAGE</a></span> 
+						<span>/</span> 
+						<span><a href="#">SEARCH</a></span>
+					</dd>
+				</dl>
+			</div>
+
+			<!-- list 2 -->
+			<div id="menu-v">
+				<dl>
+					<dd>
+						<a href="#" onclick="addList();">STORE</a>
+					</dd>
+					<dd>
+						<a href="#">ABOUT US</a>
+					</dd>
+					<dd>
+						<a href="#">COLLECTION</a>
+					</dd>
+					<dd>
+						<a href="#">COMMUNITY</a>
+					</dd>
+				</dl>
+			</div>
+
+
 		</div>
 	</div>
-	
-	<div class="main" style="background-color:purple; height:200px;">
-	
+
+
+
+	<!-- 메인 텍스트 버튼 -->
+	<div id="main_text_button">
+		<p style="text-align: left; color: #000; font-size: 11px;">NEW
+			ARRIVALS COLLECTION</p>
+		<p
+			style="text-align: left; color: #000; font-size: 25px; font-weight: bold;">TONYWACK
+			2019 F/W</p>
+		<p style="text-align: left; margin-top: 20px;">
+			<a href="https://tonywack.com/product/list.html?cate_no=54"
+				style="display: block; border: 1px solid #000; font-size: 15px; width: 122px; line-height: 41px; text-align: center; color: #000;">SHOP
+				NOW</a>
+		</p>
 	</div>
-	
-	<div class="footer" style="background-color:purple;height:200px;">
-	
+
+	<!-- start : 메인 이미지 div -->	
+	<!-- 메인 동영상 -->
+	<div class="main_image" id="video_background">
+		<video id="videobcg" preload="auto" autoplay="autoplay" loop="loop" muted="muted">	
+			<source src="resources/video/video_main.mp4" type="video/mp4">			
+		</video>
 	</div>
+	<div class="main_image"
+		style="background-image: url('https://tonywack.com/artfinger/main/main01.jpg');"></div>
+	<div class="main_image"
+		style="background-image: url('https://tonywack.com/artfinger/main/main02.jpg');"></div>
+	<!-- end : 메인 이미지 div -->
+
+
+	<!-- footer -->
+	<div id="footer" class="xans-element- xans-layout xans-layout-footer ">
+		<div class="footer_inner">
+			<div class="inner1" style="font-size: 11px">
+				<div class="f-g-0 ">
+					<dl>
+						<dd>고객센터 070-7722-5577</dd>
+						<dd>고객센터 운영시간 PM 02:00 ~ PM 09:00</dd>
+						<dd>국민은행 730601-04-078420 (주)이티씨컴퍼니</dd>
+						<dd>CONTACT.tonywack@naver.com</dd>
+					</dl>
+				</div>
+
+				<div class="f-g-1">
+					<dl>
+						<dd><a href="https://tonywack.com//index.html">HOME</a></dd>
+						<dd><a href="https://tonywack.com//member/agreement.html">AGREEMENT</a></dd>
+						<dd><a href="https://tonywack.com//shopinfo/guide.html">GUIDE</a></dd>
+						<dd><a href="https://tonywack.com//member/privacy.html">PRIVACY POLICY</a></dd>
+					</dl>
+				</div>
+
+				<div class="f-g-2">
+					<dl>
+						<dd>COMPANY. (주)이티씨컴퍼니</dd>
+						<dd>OWNER.조형상 BUSINESS NUMBER.735-88-01078</dd>
+						<dd>MAIL-ORDER LICENSE.제2019-서울강남-04431호 <a href="#none"
+							onclick="window.open('http://www.ftc.go.kr/bizCommPop.do?wrkr_no=7358801078', 'bizCommPop', 'width=750, height=950;');return false;">[사업자정보확인]</a>
+						</dd>
+						<dd>ADDRESS.06028 서울특별시 강남구 압구정로10길 11 (신사동) 지하1층</dd>
+						<dd>Copyright ©TONYWACK All rights reserved.</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
 </body>
 </html>
