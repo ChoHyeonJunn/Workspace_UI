@@ -1,3 +1,11 @@
 INDEX VERSION 1.131
+C:\Git_Repositories\Workspace_UI\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\459735571.index
+\DEVCA\src
 C:\Workspace_UI\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1587012967.index
 \UI00_Hello\src
+C:\Git_Repositories\Workspace_UI\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\943321996.index
+\DEVCA\src
+C:\Git_Repositories\Workspace_UI\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3756388425.index
+\UI999_UI_TEST02\src
+C:\Git_Repositories\Workspace_UI\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\793364732.index
+\DEVCA\src

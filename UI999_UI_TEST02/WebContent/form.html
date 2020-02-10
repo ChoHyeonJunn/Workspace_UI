@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 <style type="text/css">
 
-form {
+/* form {
 	border-radius: 10px;
 	background-color: #0d0;
 }
@@ -40,8 +40,27 @@ li {
 	background-color: black;
 	color: white;
 	font-size: 20px;
-}
+} */
 </style>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	document.getElementsByTagName("input")[1].onfocusout = function(){
+		alert("123");
+	}
+	function password(){
+		var password = document.getElementsByTagName("input")[1].value;
+		if(password.length < 8){
+			alert("길이짤바아");
+			password = "";
+		}
+		if(12 < password.length){
+			alert("길이길어");
+			password = "";
+		}
+	}
+
+</script>
 </head>
 <body>
 	<form action="#">
@@ -50,7 +69,8 @@ li {
 			
 			<ol>
 				<li>아이디 <input type="text" name="id" id="input"></li>
-				<li>비밀번호 <input type="text" name="pw" id="input"></li>
+				<li>비밀번호 <input type="password" name="pw" id="input" placeholder="8~12"></li>
+				<li><button onclick="password();">비밀번호 확인</button></li>
 				<li>비밀번호 확인 <input type="text" name="pwChk" id="input"></li>
 				<li>회원 등급 <input type="text" name="grade" value="준회원" id="input"></li>
 			</ol>

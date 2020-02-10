@@ -7,8 +7,8 @@
 <script type="text/javascript">
 	
 	function myClassQ(){
-		this.name = "kh정보교육원";	//this. -> 외부에서 접근 가능
-		var name02 = "Q 강의실";	//지역변수 -> 외부에서 접근 불가 당연히
+		this.name = "javaScript";	//this. -> 외부에서 접근 가능
+		var name02 = "Object";		//지역변수 -> 외부에서 접근 불가 당연히
 		
 		this.getName02 = function(){	//this. 지역변수를 함수로 리턴 -> 외부에서 열람 가능
 			return name02;
@@ -17,7 +17,7 @@
 	
 	// 변수에 바디만 넣어서 바로 객체로 만들 수 있음!!!
 	var classQ = {
-			name:"kh 정보 교육원",
+			name:"자바스크립트",
 			print:function(){
 				return classQ.name + "!!!!";
 			}

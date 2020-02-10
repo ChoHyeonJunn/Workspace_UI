@@ -64,9 +64,9 @@
 
 	<hr>
 	
-	<h1>숙제01 : using id</h1>
+	<h1>test01 : using id</h1>
 
-	<input id = "a"type="number">
+	<input id = "a" type="number">
 	<input id = "b" type="text" list="mylist">
 	<datalist id="mylist">
 		<option value="+"/>
@@ -75,18 +75,18 @@
 		<option value="/"/>
 	</datalist>	
 	<input id = "c" type="number">
-	<button onclick="calc();">계산</button>
+	<button onclick="calc01();">계산</button>
 	<span id="s"></span>
 
 	<script type="text/javascript">
-		function calc(){
+		function calc01(){
 			var number01 = document.getElementById("a");
 			var cal = document.getElementById("b");
 			var number02 = document.getElementById("c");
 
  			var res = number01.value + cal.value + number02.value;
- 			
-			document.getElementById("s").innerHTML = 
+
+ 			document.getElementById("s").innerHTML = 
 				"<b> 계산결과 : " + res + " = " + eval(res) + "</b>"; 
 
 		}
@@ -94,7 +94,7 @@
 
 
 
-	<h1>숙제02 : using name</h1>
+	<h1>test02 : using name</h1>
 
 	<input name="test" type="number">
 	<input name="test" type="text" list="mylist">
@@ -105,11 +105,11 @@
 		<option value="/" />
 	</datalist>
 	<input name="test" type="number">
-	<button onclick="calc();">계산</button>
+	<button onclick="calc02();">계산</button>
 	<span id="ss"></span>
 
 	<script type="text/javascript">
-		function calc(){
+		function calc02(){
 			var opr = document.getElementsByName("test");
  			var res = opr[0].value + opr[1].value + opr[2].value;
  			
